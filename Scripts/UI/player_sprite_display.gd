@@ -43,6 +43,8 @@ func _ready() -> void:
 	update_display()
 
 func _physics_process(delta: float) -> void:
+	if $".." is Control:
+		$"..".visible = self.visible
 	sprite.speed_scale = animation_speed
 	sprite.scale.x = direction
 	if animation_force_frame != -1:

@@ -3,7 +3,7 @@ extends Control
 @onready var lives_label: Label = $Container/Lives/HBoxContainer/LifeCount
 @onready var dragon_coins_bar: HBoxContainer = $Container/StarPoints/VBoxContainer/DragonCoins
 @onready var star_count: Label = $Container/StarPoints/Label
-@onready var item_box_item: Sprite2D = $ItemBoxSprite
+@onready var item_box_item: Sprite2D = $Control/ItemBoxSprite
 @onready var time_left_count: Label = $Container/Time/HBoxContainer/Label
 @onready var score_count: Label = $Container/Score/ScoreText
 @onready var coin_count: Label = $Container/Score/Coins/Label
@@ -36,11 +36,11 @@ var coins_collected := 0
 func _ready() -> void:
 	item_reserve = GameManager.reserved_item
 	update_itembox_visuals()
-	if wide:
-		$Container.size.x = size.x + 16
-	else:
-		$Container.size.x = 256
-	$Container.position.x = (480 - $Container.size.x) / 2
+	#if wide:
+		#$Container.size.x = size.x + 16
+	#else:
+		#$Container.size.x = 256
+	#$Container.position.x = (480 - $Container.size.x) / 2
 
 func refresh_coin_list() -> void:
 	pass

@@ -1,9 +1,10 @@
-[gd_scene load_steps=25 format=3 uid="uid://in27dksqeiu8"]
+[gd_scene load_steps=26 format=3 uid="uid://in27dksqeiu8"]
 
 [ext_resource type="Script" uid="uid://clekk7hn625de" path="res://Scripts/UI/MapPlayer.gd" id="2_00dce"]
 [ext_resource type="Texture2D" uid="uid://3pgeyxvjbjjm" path="res://icon.png" id="2_n4dnc"]
 [ext_resource type="Shader" uid="uid://bjht3mwlv7liv" path="res://Scripts/Shaders/map_player_yoshi.gdshader" id="3_mfgo0"]
 [ext_resource type="Texture2D" uid="uid://c3cfi2h02l6g4" path="res://Assets/Sprites/Map/Border.png" id="3_xqijj"]
+[ext_resource type="Texture2D" uid="uid://brpkusquyfnyu" path="res://Assets/Sprites/UI/MainBG.png" id="5_op4yy"]
 [ext_resource type="FontFile" uid="uid://bhqyq3yxbvqkd" path="res://Assets/Sprites/UI/HUD/HUDFont.png" id="6_l11bh"]
 [ext_resource type="PackedScene" uid="uid://bo8ywxd3ajodb" path="res://Instances/Parts/player_sprite_display.tscn" id="6_pj6ow"]
 [ext_resource type="FontFile" uid="uid://lfpsqjjnmb8i" path="res://Assets/Sprites/UI/Font.png" id="7_srtfr"]
@@ -13,12 +14,12 @@
 [ext_resource type="Shader" uid="uid://cda7wuxcvci5t" path="res://Scripts/Shaders/yoshi_colour.gdshader" id="10_bk34v"]
 [ext_resource type="SpriteFrames" uid="uid://6ef0hopfef6p" path="res://Resources/PlayerSpriteFrames/Toad/Map.tres" id="10_mceca"]
 
-[sub_resource type="FontVariation" id="FontVariation_yd6yu"]
-base_font = ExtResource("7_srtfr")
-
 [sub_resource type="FontVariation" id="FontVariation_ws60o"]
 base_font = ExtResource("6_l11bh")
 spacing_glyph = 1
+
+[sub_resource type="FontVariation" id="FontVariation_yd6yu"]
+base_font = ExtResource("7_srtfr")
 
 [sub_resource type="Shader" id="Shader_4p58c"]
 code = "shader_type canvas_item;
@@ -80,12 +81,12 @@ _data = {
 shader = ExtResource("10_bk34v")
 shader_parameter/og_1 = Color(1, 0, 1, 1)
 shader_parameter/og_2 = Color(0, 1, 0, 1)
-shader_parameter/og_3 = null
+shader_parameter/og_3 = Color(0, 0, 0, 1)
 shader_parameter/og_arm = Color(1, 0, 0, 1)
 shader_parameter/og_arm_2 = Color(1, 1, 0, 1)
-shader_parameter/colour_1 = null
-shader_parameter/colour_2 = null
-shader_parameter/colour_3 = null
+shader_parameter/colour_1 = Color(0, 0, 0, 1)
+shader_parameter/colour_2 = Color(0, 0, 0, 1)
+shader_parameter/colour_3 = Color(0, 0, 0, 1)
 shader_parameter/arm_colour = Color(0, 0, 0, 1)
 shader_parameter/arm_2_colour = Color(0, 0, 0, 1)
 shader_parameter/alpha = 1.0
@@ -130,91 +131,220 @@ visible = false
 texture = ExtResource("2_n4dnc")
 
 [node name="HUD" type="CanvasLayer" parent="."]
-visible = false
 
-[node name="Border" type="TextureRect" parent="HUD"]
+[node name="Control6" type="Control" parent="HUD"]
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_xqijj")
 
-[node name="LevelTitle" type="Label" parent="HUD"]
-offset_left = 184.0
-offset_top = 35.0
-offset_right = 355.0
+[node name="Control2" type="Control" parent="HUD/Control6"]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
 offset_bottom = 46.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = SubResource("FontVariation_yd6yu")
-text = "Yoshi's Island 1"
-uppercase = true
+grow_horizontal = 2
 
-[node name="PauseMenu" parent="HUD" instance=ExtResource("8_gxcod")]
-visible = false
+[node name="Background" type="TextureRect" parent="HUD/Control6/Control2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 344.0
+offset_bottom = 184.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_op4yy")
+stretch_mode = 1
 
-[node name="Player1Sprite" parent="HUD" instance=ExtResource("6_pj6ow")]
+[node name="Control" type="Control" parent="HUD"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Players" type="HBoxContainer" parent="HUD/Control"]
+layout_mode = 1
+offset_left = 21.0
+offset_top = 13.0
+offset_right = 118.0
+offset_bottom = 44.0
+
+[node name="PlayerControl1" type="Control" parent="HUD/Control/Players"]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+
+[node name="Player1Sprite" parent="HUD/Control/Players/PlayerControl1" instance=ExtResource("6_pj6ow")]
 z_index = 2
 z_as_relative = false
-position = Vector2(64, 44)
-scale = Vector2(-1, 1)
+position = Vector2(8, 28)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
-[node name="Player2Sprite" parent="HUD" instance=ExtResource("6_pj6ow")]
+[node name="PlayerControl2" type="Control" parent="HUD/Control/Players"]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+
+[node name="Player2Sprite" parent="HUD/Control/Players/PlayerControl2" instance=ExtResource("6_pj6ow")]
 z_index = 2
 z_as_relative = false
-position = Vector2(88, 44)
-scale = Vector2(-1, 1)
+position = Vector2(8, 28)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
-[node name="Player3Sprite" parent="HUD" instance=ExtResource("6_pj6ow")]
+[node name="PlayerControl3" type="Control" parent="HUD/Control/Players"]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+
+[node name="Player3Sprite" parent="HUD/Control/Players/PlayerControl3" instance=ExtResource("6_pj6ow")]
 z_index = 2
 z_as_relative = false
-position = Vector2(112, 44)
-scale = Vector2(-1, 1)
+position = Vector2(8, 28)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
-[node name="Player4Sprite" parent="HUD" instance=ExtResource("6_pj6ow")]
+[node name="PlayerControl4" type="Control" parent="HUD/Control/Players"]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+
+[node name="Player4Sprite" parent="HUD/Control/Players/PlayerControl4" instance=ExtResource("6_pj6ow")]
 z_index = 2
 z_as_relative = false
-position = Vector2(136, 44)
-scale = Vector2(-1, 1)
+position = Vector2(8, 28)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
-[node name="CameraArrows" type="Node2D" parent="HUD"]
-visible = false
-
-[node name="Sprite2D" type="Sprite2D" parent="HUD/CameraArrows"]
-position = Vector2(244, 57)
-texture = ExtResource("9_cjj2m")
-flip_v = true
-
-[node name="Sprite2D2" type="Sprite2D" parent="HUD/CameraArrows"]
-position = Vector2(244, 242)
-texture = ExtResource("9_cjj2m")
-
-[node name="Sprite2D3" type="Sprite2D" parent="HUD/CameraArrows"]
-position = Vector2(94, 135)
-rotation = 1.5708
-texture = ExtResource("9_cjj2m")
-
-[node name="Sprite2D4" type="Sprite2D" parent="HUD/CameraArrows"]
-position = Vector2(382, 135)
-rotation = 1.5708
-texture = ExtResource("9_cjj2m")
-flip_v = true
-
-[node name="HBoxContainer" type="HBoxContainer" parent="HUD"]
-offset_left = 80.0
-offset_top = 16.0
-offset_right = 176.0
-offset_bottom = 56.0
-theme_override_constants/separation = 2
-alignment = 2
-
-[node name="LifeCount" type="Label" parent="HUD/HBoxContainer"]
+[node name="LifeCount" type="Label" parent="HUD/Control/Players"]
+custom_minimum_size = Vector2(0, 27)
 layout_mode = 2
 size_flags_horizontal = 8
 theme_override_fonts/font = SubResource("FontVariation_ws60o")
 text = "*5"
+vertical_alignment = 2
+
+[node name="Border" type="TextureRect" parent="HUD"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -112.0
+offset_top = -23.0
+offset_right = 112.0
+offset_bottom = 23.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_xqijj")
+
+[node name="LevelTitle" type="Label" parent="HUD"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -136.0
+offset_top = 34.0
+offset_right = -2.0
+offset_bottom = 45.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_yd6yu")
+text = "Yoshi's Island 1"
+horizontal_alignment = 2
+uppercase = true
+
+[node name="PauseMenu" parent="HUD" instance=ExtResource("8_gxcod")]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+size_flags_horizontal = 4
+
+[node name="CameraArrows" type="Control" parent="HUD"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 49.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control" type="Control" parent="HUD/CameraArrows"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -5.0
+offset_right = 5.0
+offset_bottom = 10.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="HUD/CameraArrows/Control"]
+texture = ExtResource("9_cjj2m")
+centered = false
+flip_v = true
+
+[node name="Control2" type="Control" parent="HUD/CameraArrows"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -5.0
+offset_top = -10.0
+offset_right = 5.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Sprite2D2" type="Sprite2D" parent="HUD/CameraArrows/Control2"]
+texture = ExtResource("9_cjj2m")
+centered = false
+
+[node name="Control3" type="Control" parent="HUD/CameraArrows"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -5.0
+offset_right = 10.0
+offset_bottom = 5.0
+grow_vertical = 2
+
+[node name="Sprite2D3" type="Sprite2D" parent="HUD/CameraArrows/Control3"]
+position = Vector2(10, 0)
+rotation = 1.5708
+texture = ExtResource("9_cjj2m")
+centered = false
+
+[node name="Control4" type="Control" parent="HUD/CameraArrows"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -10.0
+offset_top = -5.0
+offset_bottom = 5.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="Sprite2D4" type="Sprite2D" parent="HUD/CameraArrows/Control4"]
+position = Vector2(10, 0)
+rotation = 1.5708
+texture = ExtResource("9_cjj2m")
+centered = false
+flip_v = true
 
 [node name="Circle" type="ColorRect" parent="HUD"]
+visible = false
 z_index = 4096
 z_as_relative = false
 material = SubResource("ShaderMaterial_ebwg2")
@@ -340,6 +470,7 @@ bus = &"SFX"
 [node name="Hitbox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(8, -1)
 shape = SubResource("CircleShape2D_m4cwr")
 
 [node name="OnlineUpload" type="Timer" parent="."]

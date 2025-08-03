@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://tv0wixtj7awr"]
 
-[ext_resource type="Script" path="res://Scripts/UI/option_section_node.gd" id="1_rwngc"]
+[ext_resource type="Script" uid="uid://rq77lf8gn6rq" path="res://Scripts/UI/option_section_node.gd" id="1_rwngc"]
 [ext_resource type="PackedScene" uid="uid://den5kogms88pd" path="res://Instances/UI/selectable_option_node.tscn" id="3_3fweu"]
 
 [node name="Video" type="Control" node_paths=PackedStringArray("options")]

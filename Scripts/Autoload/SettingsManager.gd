@@ -40,13 +40,14 @@ var sprite_settings := {
 						"chain_chomp": 0,
 						"spike": 0,
 						"blooper": 0,
-						"angry_sun": 0
+						"angry_sun": 0,
+						"logo": 0
 						}
 
 @onready var settings_file: Dictionary = settings_template
 
 var settings_template := {
-	"resolution": Vector2(1440, 810),
+	"resolution": Vector2(256, 224),
 	"window_type": 0,
 	"vsync_enabled": false,
 	"drop_shadows": false,

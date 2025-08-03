@@ -1,21 +1,25 @@
 [gd_scene load_steps=3 format=3 uid="uid://cxa60on04noyg"]
 
-[ext_resource type="Script" path="res://Scripts/UI/settings_section.gd" id="1_802pf"]
+[ext_resource type="Script" uid="uid://cslnfaq5altid" path="res://Scripts/UI/settings_section.gd" id="1_802pf"]
 [ext_resource type="PackedScene" uid="uid://xjo6vkm2mwwv" path="res://Instances/UI/slider_option_node.tscn" id="2_ruhfv"]
 
 [node name="AudioSettings" type="ScrollContainer" node_paths=PackedStringArray("option_nodes")]
-anchors_preset = -1
-anchor_left = 0.1
-anchor_top = 0.207407
-anchor_right = 0.883333
-anchor_bottom = 0.948148
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -50.0
+offset_right = 128.0
+offset_bottom = 50.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 3
 horizontal_scroll_mode = 0
 vertical_scroll_mode = 3
 script = ExtResource("1_802pf")
-option_nodes = [NodePath("VBoxContainer/SliderOption"), NodePath("VBoxContainer/SliderOption2"), NodePath("VBoxContainer/SliderOption3"), NodePath("VBoxContainer/SliderOption4"), NodePath("")]
-metadata/_edit_use_anchors_ = true
+option_nodes = [NodePath("VBoxContainer/SliderOption"), NodePath("VBoxContainer/SliderOption2"), NodePath("VBoxContainer/SliderOption3"), NodePath("VBoxContainer/SliderOption4"), null]
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 2

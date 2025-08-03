@@ -168,6 +168,8 @@ func show_message(message: Texture, show_time := 1) -> void:
 func game_over() -> void:
 	circle_close.play("Close")
 	await circle_close.animation_finished
+	$UI/GameOverText/Game.visible = true
+	$UI/GameOverText/Over.visible = true
 	game_over_text.play("Show")
 	SoundManager.play_ui_sound(SoundManager.game_over)
 	await get_tree().create_timer(8).timeout

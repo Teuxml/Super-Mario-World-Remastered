@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://b7ty4s7c32lqo"]
 
 [ext_resource type="Texture2D" uid="uid://kjiw82n0hfn2" path="res://Assets/Sprites/UI/PauseBox.png" id="1_nl0pp"]
-[ext_resource type="Script" path="res://Scripts/Autoload/achievement_manager.gd" id="1_uyrve"]
+[ext_resource type="Script" uid="uid://d0nosgbfekpyw" path="res://Scripts/Autoload/achievement_manager.gd" id="1_uyrve"]
 [ext_resource type="FontFile" uid="uid://bhqyq3yxbvqkd" path="res://Assets/Sprites/UI/HUD/HUDFont.png" id="2_hxuj5"]
 [ext_resource type="AudioStream" uid="uid://bclwpypkvd01f" path="res://Assets/Audio/SFX/1up.wav" id="4_3rm3n"]
 [ext_resource type="Texture2D" uid="uid://ccjcwn3yrupss" path="res://Assets/Sprites/AchievementIcons/46551.png" id="4_x1eu8"]
@@ -12,21 +12,6 @@ texture_margin_left = 2.0
 texture_margin_top = 2.0
 texture_margin_right = 2.0
 texture_margin_bottom = 2.0
-
-[sub_resource type="Animation" id="Animation_5k0ys"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AchievementUnlockToast:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(480, 230)]
-}
 
 [sub_resource type="Animation" id="Animation_73jq7"]
 resource_name = "Show"
@@ -59,10 +44,25 @@ tracks/1/keys = {
 }
 tracks/1/use_blend = true
 
+[sub_resource type="Animation" id="Animation_5k0ys"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AchievementUnlockToast:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(480, 230)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rfmfi"]
 _data = {
-&"Show": SubResource("Animation_73jq7"),
-&"RESET": SubResource("Animation_5k0ys")
+&"RESET": SubResource("Animation_5k0ys"),
+&"Show": SubResource("Animation_73jq7")
 }
 
 [node name="AchievementManager" type="Node"]
@@ -79,8 +79,10 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -40.0
-offset_right = 216.002
+offset_left = 160.0
+offset_top = -10.0
+offset_right = 376.002
+offset_bottom = 30.0
 grow_horizontal = 0
 grow_vertical = 0
 mouse_filter = 2

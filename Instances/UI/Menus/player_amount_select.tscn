@@ -47,28 +47,27 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ct47p")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="FlowContainer" type="FlowContainer" parent="."]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
+anchors_preset = 14
 anchor_top = 0.5
-anchor_right = 0.5
+anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -168.0
-offset_top = -31.0
-offset_right = 168.0
-offset_bottom = 18.0
+offset_top = -55.0
+offset_bottom = 55.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/v_separation = 10
 alignment = 1
 
-[node name="1Player" type="Panel" parent="HBoxContainer"]
+[node name="1Player" type="Panel" parent="FlowContainer"]
 auto_translate_mode = 1
-custom_minimum_size = Vector2(81, 0)
+custom_minimum_size = Vector2(90, 50)
 layout_mode = 2
+size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxTexture_bks8w")
 
-[node name="Label" type="Label" parent="HBoxContainer/1Player"]
+[node name="Label" type="Label" parent="FlowContainer/1Player"]
 auto_translate_mode = 1
 modulate = Color(0, 0.541176, 1, 1)
 layout_mode = 1
@@ -84,7 +83,7 @@ text = "1"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/1Player"]
+[node name="HBoxContainer" type="HBoxContainer" parent="FlowContainer/1Player"]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.25
@@ -95,7 +94,7 @@ grow_vertical = 2
 theme_override_constants/separation = 24
 alignment = 1
 
-[node name="1" type="TextureRect" parent="HBoxContainer/1Player/HBoxContainer"]
+[node name="1" type="TextureRect" parent="FlowContainer/1Player/HBoxContainer"]
 auto_translate_mode = 1
 material = SubResource("ShaderMaterial_udtu0")
 layout_mode = 2
@@ -105,13 +104,14 @@ texture = ExtResource("4_cmwgq")
 expand_mode = 1
 stretch_mode = 3
 
-[node name="2Player" type="Panel" parent="HBoxContainer"]
+[node name="2Player" type="Panel" parent="FlowContainer"]
 auto_translate_mode = 1
-custom_minimum_size = Vector2(81, 0)
+custom_minimum_size = Vector2(90, 50)
 layout_mode = 2
+size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxTexture_bks8w")
 
-[node name="Label" type="Label" parent="HBoxContainer/2Player"]
+[node name="Label" type="Label" parent="FlowContainer/2Player"]
 auto_translate_mode = 1
 modulate = Color(1, 0, 0, 1)
 layout_mode = 1
@@ -127,7 +127,7 @@ text = "2"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/2Player"]
+[node name="HBoxContainer" type="HBoxContainer" parent="FlowContainer/2Player"]
 auto_translate_mode = 1
 layout_mode = 1
 anchors_preset = -1
@@ -140,7 +140,7 @@ theme_override_constants/separation = 24
 alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="1" type="TextureRect" parent="HBoxContainer/2Player/HBoxContainer"]
+[node name="1" type="TextureRect" parent="FlowContainer/2Player/HBoxContainer"]
 auto_translate_mode = 1
 material = SubResource("ShaderMaterial_udtu0")
 layout_mode = 2
@@ -150,7 +150,7 @@ texture = ExtResource("4_cmwgq")
 expand_mode = 1
 stretch_mode = 3
 
-[node name="2" type="TextureRect" parent="HBoxContainer/2Player/HBoxContainer"]
+[node name="2" type="TextureRect" parent="FlowContainer/2Player/HBoxContainer"]
 auto_translate_mode = 1
 material = SubResource("ShaderMaterial_udtu0")
 layout_mode = 2
@@ -160,13 +160,14 @@ texture = ExtResource("5_x2sla")
 expand_mode = 1
 stretch_mode = 3
 
-[node name="3Player" type="Panel" parent="HBoxContainer"]
+[node name="3Player" type="Panel" parent="FlowContainer"]
 auto_translate_mode = 1
-custom_minimum_size = Vector2(81, 0)
+custom_minimum_size = Vector2(90, 50)
 layout_mode = 2
+size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxTexture_bks8w")
 
-[node name="Label" type="Label" parent="HBoxContainer/3Player"]
+[node name="Label" type="Label" parent="FlowContainer/3Player"]
 auto_translate_mode = 1
 modulate = Color(0, 1, 0, 1)
 layout_mode = 1
@@ -182,7 +183,7 @@ text = "3"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/3Player"]
+[node name="HBoxContainer" type="HBoxContainer" parent="FlowContainer/3Player"]
 auto_translate_mode = 1
 layout_mode = 1
 anchors_preset = -1
@@ -195,7 +196,7 @@ theme_override_constants/separation = 24
 alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="1" type="TextureRect" parent="HBoxContainer/3Player/HBoxContainer"]
+[node name="1" type="TextureRect" parent="FlowContainer/3Player/HBoxContainer"]
 auto_translate_mode = 1
 material = SubResource("ShaderMaterial_udtu0")
 layout_mode = 2
@@ -205,7 +206,7 @@ texture = ExtResource("4_cmwgq")
 expand_mode = 1
 stretch_mode = 3
 
-[node name="2" type="TextureRect" parent="HBoxContainer/3Player/HBoxContainer"]
+[node name="2" type="TextureRect" parent="FlowContainer/3Player/HBoxContainer"]
 auto_translate_mode = 1
 material = SubResource("ShaderMaterial_udtu0")
 layout_mode = 2
@@ -215,7 +216,7 @@ texture = ExtResource("5_x2sla")
 expand_mode = 1
 stretch_mode = 3
 
-[node name="3" type="TextureRect" parent="HBoxContainer/3Player/HBoxContainer"]
+[node name="3" type="TextureRect" parent="FlowContainer/3Player/HBoxContainer"]
 auto_translate_mode = 1
 material = SubResource("ShaderMaterial_udtu0")
 layout_mode = 2
@@ -225,13 +226,14 @@ texture = ExtResource("6_8j56d")
 expand_mode = 1
 stretch_mode = 3
 
-[node name="4Player" type="Panel" parent="HBoxContainer"]
+[node name="4Player" type="Panel" parent="FlowContainer"]
 auto_translate_mode = 1
-custom_minimum_size = Vector2(81, 0)
+custom_minimum_size = Vector2(90, 50)
 layout_mode = 2
+size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxTexture_bks8w")
 
-[node name="Label" type="Label" parent="HBoxContainer/4Player"]
+[node name="Label" type="Label" parent="FlowContainer/4Player"]
 auto_translate_mode = 1
 modulate = Color(1, 1, 0, 1)
 layout_mode = 1
@@ -247,7 +249,7 @@ text = "4"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/4Player"]
+[node name="HBoxContainer" type="HBoxContainer" parent="FlowContainer/4Player"]
 auto_translate_mode = 1
 layout_mode = 1
 anchors_preset = -1
@@ -260,7 +262,7 @@ theme_override_constants/separation = 19
 alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="1" type="TextureRect" parent="HBoxContainer/4Player/HBoxContainer"]
+[node name="1" type="TextureRect" parent="FlowContainer/4Player/HBoxContainer"]
 auto_translate_mode = 1
 material = SubResource("ShaderMaterial_udtu0")
 layout_mode = 2
@@ -270,7 +272,7 @@ texture = ExtResource("4_cmwgq")
 expand_mode = 1
 stretch_mode = 3
 
-[node name="2" type="TextureRect" parent="HBoxContainer/4Player/HBoxContainer"]
+[node name="2" type="TextureRect" parent="FlowContainer/4Player/HBoxContainer"]
 auto_translate_mode = 1
 material = SubResource("ShaderMaterial_udtu0")
 layout_mode = 2
@@ -280,7 +282,7 @@ texture = ExtResource("5_x2sla")
 expand_mode = 1
 stretch_mode = 3
 
-[node name="3" type="TextureRect" parent="HBoxContainer/4Player/HBoxContainer"]
+[node name="3" type="TextureRect" parent="FlowContainer/4Player/HBoxContainer"]
 auto_translate_mode = 1
 material = SubResource("ShaderMaterial_udtu0")
 layout_mode = 2
@@ -290,7 +292,7 @@ texture = ExtResource("6_8j56d")
 expand_mode = 1
 stretch_mode = 3
 
-[node name="4" type="TextureRect" parent="HBoxContainer/4Player/HBoxContainer"]
+[node name="4" type="TextureRect" parent="FlowContainer/4Player/HBoxContainer"]
 auto_translate_mode = 1
 material = SubResource("ShaderMaterial_udtu0")
 layout_mode = 2

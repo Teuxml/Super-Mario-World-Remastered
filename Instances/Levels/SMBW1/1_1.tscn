@@ -1,6 +1,6 @@
 [gd_scene load_steps=25 format=4 uid="uid://co43e2c1jr07y"]
 
-[ext_resource type="Script" path="res://Scripts/Classes/LevelClass.gd" id="1_xh6sy"]
+[ext_resource type="Script" uid="uid://k72dmo2yqq6n" path="res://Scripts/Classes/LevelClass.gd" id="1_xh6sy"]
 [ext_resource type="AudioStream" uid="uid://smgqxji42l8k" path="res://Resources/MusicTracks/SMB1Overworld.tres" id="2_cvqjh"]
 [ext_resource type="PackedScene" uid="uid://c1xol3wby2j0k" path="res://Instances/Prefabs/level_bg.tscn" id="2_hvycl"]
 [ext_resource type="AudioStream" uid="uid://bju11ltkndcbs" path="res://Assets/Audio/BGM/SMB1/LevelComplete.mp3" id="3_r558o"]

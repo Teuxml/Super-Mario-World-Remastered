@@ -38,7 +38,7 @@ var player_direction := ["", "", "", ""]
 @onready var follower_sprites = [$Player2Sprite, $Player3Sprite, $Player4Sprite]
 @onready var follower_idle_positions = [$SpritePositions/P2, $SpritePositions/P3, $SpritePositions/P4]
 
-@onready var player_hud_sprites = [$HUD/Player1Sprite, $HUD/Player2Sprite, $HUD/Player3Sprite, $HUD/Player4Sprite]
+@onready var player_hud_sprites = [$HUD/Control/Players/PlayerControl1/Player1Sprite, $HUD/Control/Players/PlayerControl2/Player2Sprite, $HUD/Control/Players/PlayerControl3/Player3Sprite, $HUD/Control/Players/PlayerControl4/Player4Sprite]
 @onready var sprite: AnimatedSprite2D = $Player1Sprite
 
 
@@ -54,7 +54,7 @@ var current_player_1_animation := ""
 const YOSHI_COLOURS := [[Color("00F800"), Color("00B800"), Color("D8C8A8"), Color("D08048")], [Color("F80000"), Color("B80000"), Color("F8D0C0"), Color("E87958")], [Color("8888F8"), Color("6868D8"), Color("E800B0"), Color("F8D0C0")], [Color("F8F800"), Color("F8C000"), Color("F88800"), Color("B82800")]]
 
 signal enter_level
-@onready var camera_arrows: Node2D = $HUD/CameraArrows
+@onready var camera_arrows: Control = $HUD/CameraArrows
 
 func _ready() -> void:
 	hud.show()
@@ -76,7 +76,7 @@ func _process(delta: float) -> void:
 			else:
 				i.speed_scale = 1
 		running_sfx.stop()
-	$HUD/HBoxContainer/LifeCount.text = "*" + str(GameManager.lives)
+	$HUD/Control/Players/LifeCount.text = "*" + str(GameManager.lives)
 	get_parent().climbing = players_climbing[0]
 	handle_camera_scrolling(delta)
 	handle_directions()

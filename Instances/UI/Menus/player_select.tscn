@@ -106,11 +106,10 @@ layout_mode = 2
 columns = 11
 
 [node name="P1Cursor" type="Node2D" parent="."]
-visible = false
 modulate = Color(0.423529, 0.733333, 1, 1)
 top_level = true
 z_index = 4096
-position = Vector2(208, 184)
+position = Vector2(97, 86)
 
 [node name="Sprite" type="Sprite2D" parent="P1Cursor"]
 texture = ExtResource("6_txqgy")
@@ -122,6 +121,7 @@ offset_right = 7.0
 offset_bottom = 6.0
 theme_override_fonts/font = ExtResource("2_uh84k")
 text = "1"
+metadata/_edit_use_anchors_ = true
 
 [node name="Area" type="Area2D" parent="P1Cursor"]
 monitorable = false
@@ -131,11 +131,10 @@ position = Vector2(-2, -2)
 shape = SubResource("CircleShape2D_3k4v3")
 
 [node name="P2Cursor" type="Node2D" parent="."]
-visible = false
 modulate = Color(1, 0, 0, 1)
 top_level = true
 z_index = 4096
-position = Vector2(224, 184)
+position = Vector2(113, 86)
 
 [node name="Sprite" type="Sprite2D" parent="P2Cursor"]
 texture = ExtResource("6_txqgy")
@@ -148,6 +147,7 @@ offset_right = 1.0
 offset_bottom = 6.0
 theme_override_fonts/font = ExtResource("2_uh84k")
 text = "2"
+metadata/_edit_use_anchors_ = true
 
 [node name="Area" type="Area2D" parent="P2Cursor"]
 position = Vector2(4, 0)
@@ -158,11 +158,10 @@ position = Vector2(-2, -2)
 shape = SubResource("CircleShape2D_3k4v3")
 
 [node name="P3Cursor" type="Node2D" parent="."]
-visible = false
 modulate = Color(0, 1, 0, 1)
 top_level = true
 z_index = 4096
-position = Vector2(240, 184)
+position = Vector2(129, 86)
 
 [node name="Sprite" type="Sprite2D" parent="P3Cursor"]
 texture = ExtResource("6_txqgy")
@@ -175,6 +174,7 @@ offset_right = 7.0
 offset_bottom = 1.0
 theme_override_fonts/font = ExtResource("2_uh84k")
 text = "3"
+metadata/_edit_use_anchors_ = true
 
 [node name="Area" type="Area2D" parent="P3Cursor"]
 position = Vector2(0, 4)
@@ -185,11 +185,10 @@ position = Vector2(-2, -2)
 shape = SubResource("CircleShape2D_3k4v3")
 
 [node name="P4Cursor" type="Node2D" parent="."]
-visible = false
 modulate = Color(1, 1, 0, 1)
 top_level = true
 z_index = 4096
-position = Vector2(256, 184)
+position = Vector2(145, 86)
 
 [node name="Sprite" type="Sprite2D" parent="P4Cursor"]
 texture = ExtResource("6_txqgy")
@@ -203,6 +202,7 @@ offset_right = 1.0
 offset_bottom = 1.0
 theme_override_fonts/font = ExtResource("2_uh84k")
 text = "4"
+metadata/_edit_use_anchors_ = true
 
 [node name="Area" type="Area2D" parent="P4Cursor"]
 position = Vector2(4, 4)

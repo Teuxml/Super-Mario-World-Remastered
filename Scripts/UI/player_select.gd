@@ -27,6 +27,8 @@ var locked := false
 
 func _ready() -> void:
 	get_characters()
+	for i in cursors:
+		i.position = get_viewport_rect().size / 2
 
 func _physics_process(delta: float) -> void:
 	if is_open == false:

@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://u84jg7u3at58"]
 
 [ext_resource type="PackedScene" uid="uid://den5kogms88pd" path="res://Instances/UI/selectable_option_node.tscn" id="1_hhqv1"]
-[ext_resource type="Script" path="res://Scripts/UI/sprite_option_node.gd" id="2_o8tvf"]
-[ext_resource type="Texture2D" uid="uid://0u7skxqiwcqm" path="res://icon.png" id="3_n1ojq"]
+[ext_resource type="Script" uid="uid://bbfl8oes3ed7q" path="res://Scripts/UI/sprite_option_node.gd" id="2_o8tvf"]
+[ext_resource type="Texture2D" uid="uid://3pgeyxvjbjjm" path="res://icon.png" id="3_n1ojq"]
 
 [node name="SelectableOptionNode" instance=ExtResource("1_hhqv1")]
 script = ExtResource("2_o8tvf")

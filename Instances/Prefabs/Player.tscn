@@ -25,7 +25,7 @@
 [ext_resource type="Script" uid="uid://1avuytd3owf7" path="res://Scripts/Classes/States/Player/pipe_travel.gd" id="23_lfi46"]
 [ext_resource type="Texture2D" uid="uid://brxwbw5xhl7em" path="res://Assets/Sprites/Objects/VersusCrown.png" id="24_4afg5"]
 [ext_resource type="Script" uid="uid://db3ye1s4yrq3s" path="res://Scripts/Classes/States/Player/animation_test.gd" id="24_awngt"]
-[ext_resource type="SpriteFrames" uid="uid://wbpo31tdgwid" path="res://Resources/PlayerSpriteFrames/Toad/Small.tres" id="25_71cox"]
+[ext_resource type="SpriteFrames" uid="uid://dfmiyftoifxiv" path="res://Resources/PlayerSpriteFrames/Toad/Small.tres" id="25_71cox"]
 [ext_resource type="Script" uid="uid://bkt2h66pnkvms" path="res://Scripts/Classes/States/Player/flag_pole.gd" id="25_a8urd"]
 [ext_resource type="Texture2D" uid="uid://3pgeyxvjbjjm" path="res://icon.png" id="27_1dftu"]
 [ext_resource type="PackedScene" uid="uid://b07lfqfo25fi1" path="res://Instances/Prefabs/player_yoshi.tscn" id="28_m1u2g"]
@@ -772,6 +772,7 @@ process_callback = 0
 limit_left = -64
 limit_bottom = 64
 limit_smoothed = true
+position_smoothing_enabled = true
 position_smoothing_speed = 8.0
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
@@ -987,7 +988,20 @@ offset_bottom = 4.0
 theme_override_fonts/font = ExtResource("36_bfq87")
 text = "1"
 
-[node name="MainHUD" parent="CanvasLayer" instance=ExtResource("40_mtsyv")]
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MainHUD" parent="CanvasLayer/Control" instance=ExtResource("40_mtsyv")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+offset_right = 0.0
 
 [node name="TextureRect" type="TextureRect" parent="."]
 top_level = true

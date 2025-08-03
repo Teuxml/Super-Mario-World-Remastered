@@ -2,7 +2,7 @@ extends Control
 @onready var pointer: CenterContainer = $Pointer
 @onready var animations: AnimationPlayer = $Animations
 
-@onready var panels = [$"HBoxContainer/1Player", $"HBoxContainer/2Player", $"HBoxContainer/3Player", $"HBoxContainer/4Player"]
+@onready var panels = [$"FlowContainer/1Player", $"FlowContainer/2Player", $"FlowContainer/3Player", $"FlowContainer/4Player"]
 
 var selected_index := 0
 var active := false
@@ -29,13 +29,14 @@ func _process(delta: float) -> void:
 		selected_amount()
 	if Input.is_action_just_pressed("ui_back"):
 		cancel()
-	pointer.global_position.x = panels[selected_index].global_position.x + 40.5
+	pointer.global_position.x = panels[selected_index].global_position.x + 45
+	pointer.global_position.y = panels[selected_index].global_position.y + 55
 	var panel_index := 0
-	for i in panels:
-		i.global_position.y = 103
-		if panel_index == selected_index:
-			i.global_position.y = 85
-		panel_index += 1
+	#for i in panels:
+		#i.global_position.y = 103
+		#if panel_index == selected_index:
+			#i.global_position.y = 85
+		#panel_index += 1
 
 func selected_amount() -> void:
 	SoundManager.play_ui_sound(SoundManager.coin)

@@ -30,8 +30,8 @@ void fragment() {
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_knxcf"]
 shader = SubResource("Shader_eikt6")
 shader_parameter/circle_size = 0.0
-shader_parameter/screen_width = 480.0
-shader_parameter/screen_height = 270.0
+shader_parameter/screen_width = 256.0
+shader_parameter/screen_height = 224.0
 
 [sub_resource type="Animation" id="Animation_mnhrb"]
 length = 0.001
@@ -97,6 +97,7 @@ script = ExtResource("1_vemv5")
 metadata/_edit_use_anchors_ = true
 
 [node name="CircleShow" type="ColorRect" parent="."]
+visible = false
 z_index = 5
 material = SubResource("ShaderMaterial_knxcf")
 layout_mode = 1
@@ -160,6 +161,7 @@ option_colours = Array[Color]([Color(0, 1, 0, 1), Color(0.816353, 0.489456, 0.85
 initial_active = true
 
 [node name="MainMenuSelections2" parent="." instance=ExtResource("6_ib3oy")]
+visible = false
 layout_mode = 1
 options = Array[String](["Local", "Online", "", "", "", ""])
 option_colours = Array[Color]([Color(1, 0.54592, 0.347146, 1), Color(0, 1, 0, 1), Color(0.816353, 0.489456, 0.85536, 1), Color(1, 0.312295, 0.248026, 1), Color(0, 0, 0, 1)])
@@ -168,6 +170,10 @@ can_exit = true
 [node name="PlayerAmountSelect" parent="." instance=ExtResource("7_r62vo")]
 visible = false
 layout_mode = 1
+offset_left = 9.0
+offset_top = 12.0
+offset_right = -9.0
+offset_bottom = -12.0
 
 [node name="SaveSelect" parent="." instance=ExtResource("8_exupd")]
 visible = false

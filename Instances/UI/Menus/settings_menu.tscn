@@ -61,10 +61,14 @@ texture = ExtResource("3_55l6k")
 
 [node name="TitleHeader" type="HBoxContainer" parent="."]
 z_index = -4
-offset_left = 16.0
-offset_top = 8.0
-offset_right = 464.0
-offset_bottom = 56.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -224.0
+offset_top = -2.0
+offset_right = 224.0
+offset_bottom = 46.0
+grow_horizontal = 2
 
 [node name="TextureRect2" type="TextureRect" parent="TitleHeader"]
 z_index = -4
@@ -92,35 +96,58 @@ flip_h = true
 
 [node name="HSeparator" type="HSeparator" parent="."]
 z_index = -4
-offset_left = 184.0
-offset_top = 40.0
-offset_right = 296.0
-offset_bottom = 48.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -56.0
+offset_top = 31.0
+offset_right = 56.0
+offset_bottom = 39.0
+grow_horizontal = 2
 theme_override_styles/separator = SubResource("StyleBoxLine_wfewj")
 
 [node name="DisplaySettings" parent="." instance=ExtResource("8_45wqw")]
-anchor_left = 0.116667
+visible = false
+anchor_left = 0.0351562
+anchor_top = 0.205357
+anchor_right = 0.964844
+anchor_bottom = 0.946429
 title = "Display"
 metadata/_edit_use_anchors_ = true
 
 [node name="AudioSettings" parent="." node_paths=PackedStringArray("option_nodes") instance=ExtResource("6_f8yi7")]
-anchor_left = 0.116667
+visible = false
+anchors_preset = 15
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.0
+offset_top = 46.0
+offset_right = 0.0
+offset_bottom = -46.0
 option_nodes = [NodePath("VBoxContainer/SliderOption"), NodePath("VBoxContainer/SliderOption2"), NodePath("VBoxContainer/SliderOption3"), NodePath("VBoxContainer/SliderOption4"), null]
 title = "Audio"
 
 [node name="GameplaySettings" parent="." node_paths=PackedStringArray("option_nodes") instance=ExtResource("8_apeol")]
+visible = false
 grow_horizontal = 1
 grow_vertical = 1
 option_nodes = [NodePath("VBoxContainer/LevelLayout"), null, null, NodePath("VBoxContainer/AutumnStyle"), NodePath("VBoxContainer/CharacterPhysics"), null, null, null, null]
 title = "Gameplay"
 
 [node name="AbilitySettings" parent="." instance=ExtResource("9_kq8w2")]
+visible = false
 metadata/_edit_use_anchors_ = true
 
 [node name="SpriteSettings" parent="." instance=ExtResource("10_j2cak")]
-anchor_right = 0.85
-offset_right = 0.0
+anchor_left = 0.165039
+anchor_right = 0.842383
+anchor_bottom = 0.946429
+offset_left = -32.25
+offset_right = -6.64999
 offset_bottom = 0.0
+size_flags_horizontal = 3
 title = "Sprites"
 metadata/_edit_use_anchors_ = true
 

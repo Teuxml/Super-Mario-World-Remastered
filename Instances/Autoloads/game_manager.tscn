@@ -264,6 +264,7 @@ auto_translate_mode = 1
 [node name="GameOverText" type="Node" parent="UI"]
 
 [node name="Game" type="Sprite2D" parent="UI/GameOverText"]
+visible = false
 z_index = 4096
 z_as_relative = false
 position = Vector2(-32, 135)
@@ -271,6 +272,7 @@ texture = ExtResource("21_lfatl")
 vframes = 2
 
 [node name="Over" type="Sprite2D" parent="UI/GameOverText"]
+visible = false
 z_index = 4096
 z_as_relative = false
 position = Vector2(497, 135)

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cvprr1nf81boe"]
 
 [ext_resource type="PackedScene" uid="uid://den5kogms88pd" path="res://Instances/UI/selectable_option_node.tscn" id="1_ofls0"]
-[ext_resource type="Script" path="res://Scripts/UI/settings_section.gd" id="1_r8x5s"]
+[ext_resource type="Script" uid="uid://cslnfaq5altid" path="res://Scripts/UI/settings_section.gd" id="1_r8x5s"]
 
 [node name="DisplaySettings" type="ScrollContainer" node_paths=PackedStringArray("option_nodes")]
 anchors_preset = -1
@@ -24,7 +24,7 @@ theme_override_constants/separation = -4
 
 [node name="Resolution" parent="VBoxContainer" instance=ExtResource("1_ofls0")]
 layout_mode = 2
-node_title = "Window Resolution"
+node_title = "Resolution"
 selectable_values = [Vector2(480, 270), Vector2(960, 540), Vector2(1440, 810), Vector2(1920, 1080), Vector2(2560, 1440), Vector2(3840, 2160)]
 settings_value = "resolution"
 
